@@ -6,10 +6,23 @@ public class CardPickGame{
 
     public CardPickGame(int possessionCoin) {
         this.possessionCoin = possessionCoin;
+        execute();
+    }
+
+    public int getCard() {
+        int deckSize = deckSetCount * 10; // デッキの枚数
+        int card1 = GameUtils.getRandomInt(deckSize + 1);
+        int card2 = GameUtils.getRandomInt(deckSize + 1);
+        int total = card1 + card2;
+
+        //カードと合計値を表示
+        System.out.println("Cards drawn are " + card1 + " and " + card2 + ", total is " + total + ".");
+
+        return total; //合計値を返却
     }
 
     public void execute() {
-
+        getCard();
     }
 
 }
