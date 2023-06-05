@@ -21,8 +21,23 @@ public class CardPickGame{
         return total; //合計値を返却
     }
 
+    private boolean judgeCard(int getCardResult) {
+
+        if (getCardResult >= 11) {
+            System.out.println(true);
+            return true;
+        } else {
+            System.out.println(false);
+            return false;
+        }
+
+
+
+    }
+
     public void execute() {
-        getCard();
+        int total = getCard();
+        judgeCard(total);
     }
 
 }
