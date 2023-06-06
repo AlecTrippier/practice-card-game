@@ -2,7 +2,7 @@ public class ExeTest {
 
     public static void main(String[] args) {
         CardPickGame game = new CardPickGame(400); //インスタンス生成時に所持コイン枚数を設定する
-       
+        HighAndLowGame game2 = new HighAndLowGame(100,200);
         String inputString = GameUtils.getInputString();
         int inputInt = GameUtils.getInputInt();
         int randomInt = GameUtils.getRandomInt(5);
