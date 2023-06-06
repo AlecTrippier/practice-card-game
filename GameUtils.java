@@ -18,7 +18,8 @@ public class GameUtils {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         try {
-            System.out.print("文字列を入力してください");
+            // System.out.print("文字列を入力してください");
+           
             input = br.readLine(); // ユーザーからの入力を代入する
 
         } catch (IOException e) {
