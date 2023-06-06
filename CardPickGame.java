@@ -25,18 +25,19 @@ public class CardPickGame {
         }
     }
 
-    public void execute() {
+    public int execute() {
+
         while (true) {
             int currentCoin = checkPossessionCoin();
             if (currentCoin == 0) {
                 // 所持コインが0の場合
-                return;
+                return possessionCoin;
             } else if (currentCoin == -1) {
                 // ゲーム開始
                 acceptBetCoin();
             } else {
                 // 処理終了
-                return;
+                return possessionCoin;
             }
         }
     }
@@ -46,20 +47,26 @@ public class CardPickGame {
             return 0;
         } else {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("You have " + possessionCoin + " Coin, Start the game? y / n");
-            String userInput = scanner.nextLine();
-            if (userInput.equalsIgnoreCase("y")) {
-                // ゲーム開始
-                return -1;
-            } else if (userInput.equalsIgnoreCase("n")) {
-                // 処理終了
-                return possessionCoin;
-            } else {
-                System.out.println("Please enter y or n.");
-                return checkPossessionCoin(); // 再帰的にメソッドを呼び出す
+
+            while (true) {
+                System.out.println("You have テスト2" + possessionCoin + " Coin, Start the game? y / n");
+                String userInput = scanner.nextLine();
+                System.out.println(); // 改行を追加
+
+                if (userInput.equalsIgnoreCase("y")) {
+                    // ゲーム開始
+                    return -1;
+                } else if (userInput.equalsIgnoreCase("n")) {
+                    // 処理終了
+                    return possessionCoin;
+                } else {
+                    System.out.println("Please enter y or n.");
+                }
             }
         }
     }
+
+
 
     public void acceptBetCoin() {
         int betCoinLimit = Math.min(maxBetCoin, possessionCoin);

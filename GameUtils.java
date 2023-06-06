@@ -19,11 +19,11 @@ public class GameUtils {
 
         try {
             // System.out.print("文字列を入力してください");
-           
+
             input = br.readLine(); // ユーザーからの入力を代入する
 
         } catch (IOException e) {
-            System.out.println("Input error...Please retype!");
+            System.out.println("Does not match condition of the username");
             return getInputString();
         }
 
